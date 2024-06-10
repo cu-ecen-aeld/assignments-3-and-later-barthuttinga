@@ -1,7 +1,8 @@
 .DEFAULT_GOAL := writer
+CC = $(CROSS_COMPILE)gcc
 
 writer:
-	PATH=$$PATH:../arm-cross-compiler/bin/ $${CROSS_COMPILE}gcc -o writer writer.c
+	$(CC) -o writer writer.c
 
 clean:
 	rm -f writer *.o
